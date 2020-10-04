@@ -1,0 +1,128 @@
+.login {
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        width: 80%;
+        height: 80%;
+        border-radius: 2rem;
+        display: flex;
+        overflow: hidden;
+
+        @media only screen and (max-width: $bpLargest) {
+            height: 75%;
+        }
+
+        @media only screen and (max-width: $bpLarge) {
+            height: 60%;
+        }
+
+        @media only screen and (max-width: $bpMedium) {
+            flex-direction: column;
+            height: 70%;
+        }
+    }
+
+    &__hero {
+        width: 50%;
+        background-color: $primaryColour;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width: $bpMedium) {
+            display: none;
+        }
+    }
+
+    &__logo {
+        width: 70%;
+        display: block;
+
+        @media only screen and (max-width: $bpLargest) {
+            width: 90%;
+        }
+    }
+
+    &__form-container {
+        width: 50%;
+        background-color: $lightColour;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & > h1 {
+            align-self: flex-start;
+            color: $darkColour;
+        }
+
+        @media only screen and (max-width: $bpMedium) {
+            width: 100%;
+            position: relative;
+        }
+    }
+
+    &__form-wrapper {
+        width: 60%;
+
+        @media only screen and (max-width: $bpLargest) {
+            width: 80%;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        &-logo {
+            display: none;
+
+            @media only screen and (max-width: $bpMedium) {
+                display: block;
+                width: 30%;
+                position: absolute;
+                top: 1.5rem;
+            }
+
+            @media only screen and (max-width: $bpSmall) {
+                width: 35%;
+                top: 1rem;
+            }
+
+            @media only screen and (max-width: $bpSmallest) {
+                width: 40%;
+                top: 1rem;
+            }
+        }
+
+        &-field {
+            font-family: inherit;
+            border: none;
+            border-bottom: 2px solid $darkColour;
+            outline: none;
+            padding: .5rem 0;
+            background-color: transparent;
+            color: $darkColour;
+            font-size: 1.5rem;
+            transition: .2s;
+
+            &:focus {
+                border-bottom: 2px solid $primaryColour;
+            }
+        }
+
+        & > label {
+            font-size: 2rem;
+        }
+
+        & > button {
+            align-self: flex-start;
+        }
+    }
+}

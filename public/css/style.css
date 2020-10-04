@@ -1,0 +1,490 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 62.5em) {
+    html {
+      font-size: 50%; } }
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  line-height: 1.6; }
+
+.dashboard {
+  height: calc(100vh - 10rem); }
+  .dashboard .flash__message {
+    margin: 0 auto;
+    width: 30rem; }
+  .dashboard__container {
+    max-width: 120rem;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem; }
+  .dashboard__label {
+    margin-top: 3rem;
+    font-size: 2rem; }
+  .dashboard__input {
+    font-family: inherit;
+    border: none;
+    border: 1px solid #e6e6e6;
+    outline: none;
+    padding: .5rem;
+    background-color: transparent;
+    color: #333;
+    font-size: 2rem;
+    transition: .2s; }
+    .dashboard__input:focus {
+      border: 1px solid #ffde32; }
+  .dashboard__properties {
+    width: 100%;
+    margin-top: 3rem;
+    height: 75%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column; }
+  .dashboard__property {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem 1rem 1rem;
+    cursor: pointer;
+    transition: background-color .3s;
+    border-bottom: 1px solid #e6e6e6; }
+    .dashboard__property:hover {
+      background-color: #ffde32; }
+    .dashboard__property-name {
+      font-size: 1.8rem;
+      margin: 0; }
+    .dashboard__property-actions {
+      transition: transform .3s; }
+    .dashboard__property-details {
+      padding: 1rem 1.5rem 1rem 1rem;
+      font-size: 1.5rem;
+      margin: 0;
+      background-color: #e6e6e6; }
+      .dashboard__property-details h2 {
+        margin-bottom: 1rem; }
+      .dashboard__property-details p {
+        margin-bottom: .5rem; }
+      .dashboard__property-details-hide {
+        display: none; }
+  .dashboard__property-primary {
+    background-color: #ffde32; }
+  .dashboard__transactions-link {
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    background-color: #ffde32;
+    color: #333;
+    transition: all .3s; }
+    .dashboard__transactions-link:hover {
+      background-color: #333;
+      color: #ffde32;
+      text-decoration: none; }
+
+.rotate {
+  transform: rotate(180deg); }
+
+.login {
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .login__container {
+    width: 80%;
+    height: 80%;
+    border-radius: 2rem;
+    display: flex;
+    overflow: hidden; }
+    @media only screen and (max-width: 75em) {
+      .login__container {
+        height: 75%; } }
+    @media only screen and (max-width: 62.5em) {
+      .login__container {
+        height: 60%; } }
+    @media only screen and (max-width: 48em) {
+      .login__container {
+        flex-direction: column;
+        height: 70%; } }
+  .login__hero {
+    width: 50%;
+    background-color: #ffde32;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    @media only screen and (max-width: 48em) {
+      .login__hero {
+        display: none; } }
+  .login__logo {
+    width: 70%;
+    display: block; }
+    @media only screen and (max-width: 75em) {
+      .login__logo {
+        width: 90%; } }
+  .login__form-container {
+    width: 50%;
+    background-color: #f4f4f4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .login__form-container > h1 {
+      align-self: flex-start;
+      color: #333; }
+    @media only screen and (max-width: 48em) {
+      .login__form-container {
+        width: 100%;
+        position: relative; } }
+  .login__form-wrapper {
+    width: 60%; }
+    @media only screen and (max-width: 75em) {
+      .login__form-wrapper {
+        width: 80%; } }
+  .login__form {
+    display: flex;
+    flex-direction: column; }
+    .login__form-logo {
+      display: none; }
+      @media only screen and (max-width: 48em) {
+        .login__form-logo {
+          display: block;
+          width: 30%;
+          position: absolute;
+          top: 1.5rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .login__form-logo {
+          width: 35%;
+          top: 1rem; } }
+      @media only screen and (max-width: 28.125em) {
+        .login__form-logo {
+          width: 40%;
+          top: 1rem; } }
+    .login__form-field {
+      font-family: inherit;
+      border: none;
+      border-bottom: 2px solid #333;
+      outline: none;
+      padding: .5rem 0;
+      background-color: transparent;
+      color: #333;
+      font-size: 1.5rem;
+      transition: .2s; }
+      .login__form-field:focus {
+        border-bottom: 2px solid #ffde32; }
+    .login__form > label {
+      font-size: 2rem; }
+    .login__form > button {
+      align-self: flex-start; }
+
+.navbar {
+  height: 10rem;
+  padding: 0 1rem;
+  max-width: 120rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .navbar__brand {
+    font-size: 3rem; }
+  .navbar__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem; }
+  .navbar__link {
+    font-size: 1.5rem;
+    font-family: "Nunito", sans-serif;
+    color: #333;
+    transition: all .2s; }
+    .navbar__link:hover {
+      color: #8f8f8f;
+      text-decoration: none; }
+  .navbar__link-primary {
+    font-size: 1.5rem;
+    font-family: "Nunito", sans-serif;
+    color: #333;
+    background-color: #ffde32;
+    padding: .7rem 1.2rem;
+    transition: all .2s; }
+    .navbar__link-primary:hover {
+      color: #ffde32;
+      background-color: #333;
+      text-decoration: none; }
+
+.new-transaction {
+  height: calc(100vh - 10rem); }
+  .new-transaction .flash__message {
+    margin: 0 auto;
+    width: 30rem; }
+  .new-transaction__container {
+    max-width: 120rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem; }
+  .new-transaction__form {
+    display: flex;
+    flex-direction: column; }
+    .new-transaction__form h2 {
+      margin: 0;
+      margin-top: 1rem;
+      font-size: 2.5rem; }
+    .new-transaction__form label {
+      font-size: 1.6rem;
+      margin: 0;
+      margin-top: 1rem; }
+    .new-transaction__form input {
+      font-family: inherit;
+      border: none;
+      border: 1px solid #e6e6e6;
+      outline: none;
+      padding: .5rem;
+      background-color: transparent;
+      color: #333;
+      font-size: 1.4rem;
+      transition: .2s; }
+      .new-transaction__form input:focus {
+        border: 1px solid #ffde32; }
+      .new-transaction__form input::placeholder {
+        font-size: 1.4rem; }
+    .new-transaction__form textarea {
+      font-family: inherit;
+      border: none;
+      border: 1px solid #e6e6e6;
+      outline: none;
+      padding: .5rem;
+      background-color: transparent;
+      color: #333;
+      font-size: 1.4rem;
+      resize: none;
+      transition: .2s; }
+      .new-transaction__form textarea:focus {
+        border: 1px solid #ffde32; }
+    .new-transaction__form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+    .new-transaction__form button {
+      margin-right: 1rem; }
+  .new-transaction__calc {
+    font-size: 2.5rem; }
+
+.property {
+  height: 100vh; }
+  .property__container {
+    max-width: 120rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem; }
+  .property__form {
+    display: flex;
+    flex-direction: column; }
+    .property__form-field {
+      font-family: inherit;
+      border: none;
+      border: 1px solid #e6e6e6;
+      outline: none;
+      padding: .5rem;
+      background-color: transparent;
+      color: #333;
+      font-size: 1.4rem;
+      transition: .2s; }
+      .property__form-field:focus {
+        border: 1px solid #ffde32; }
+    .property__form > label {
+      font-size: 1.6rem; }
+    .property__form button {
+      align-self: flex-start; }
+
+.register {
+  height: 100vh; }
+  .register__container {
+    max-width: 120rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem; }
+  .register__form {
+    display: flex;
+    flex-direction: column; }
+    .register__form-field {
+      font-family: inherit;
+      border: none;
+      border: 1px solid #e6e6e6;
+      outline: none;
+      padding: .5rem;
+      background-color: transparent;
+      color: #333;
+      font-size: 1.4rem;
+      transition: .2s; }
+      .register__form-field:focus {
+        border: 1px solid #ffde32; }
+    .register__form > label {
+      font-size: 1.6rem; }
+    .register__form button {
+      align-self: flex-start; }
+
+.transactions {
+  height: calc(100vh - 10rem); }
+  .transactions .flash__message {
+    margin: 0 auto;
+    width: 30rem; }
+  .transactions__container {
+    max-width: 120rem;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem; }
+  .transactions__label {
+    margin-top: 3rem;
+    font-size: 2rem; }
+  .transactions__input {
+    font-family: inherit;
+    border: none;
+    border: 1px solid #e6e6e6;
+    outline: none;
+    padding: .5rem;
+    background-color: transparent;
+    color: #333;
+    font-size: 2rem;
+    transition: .2s; }
+    .transactions__input:focus {
+      border: 1px solid #ffde32; }
+  .transactions__link {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    background-color: #ffde32;
+    color: #333;
+    align-self: flex-start;
+    transition: all .3s; }
+    .transactions__link:hover {
+      background-color: #333;
+      color: #ffde32;
+      text-decoration: none; }
+  .transactions__list {
+    width: 100%;
+    margin-top: 3rem;
+    height: 75%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column; }
+  .transactions__transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem 1rem 1rem;
+    cursor: pointer;
+    transition: background-color .2s;
+    border-bottom: 1px solid #e6e6e6; }
+    .transactions__transaction:hover {
+      background-color: #ffde32; }
+    .transactions__transaction-date {
+      font-size: 1.8rem;
+      margin: 0; }
+    .transactions__transaction-toggle {
+      display: flex;
+      align-items: center; }
+    .transactions__transaction-amount {
+      margin: 0;
+      margin-right: 2rem;
+      font-size: 1.8rem; }
+    .transactions__transaction-details {
+      padding: 1rem 1.5rem 1rem 1rem;
+      font-size: 1.5rem;
+      margin: 0;
+      background-color: #e6e6e6; }
+      .transactions__transaction-details h2 {
+        margin-bottom: 1rem; }
+      .transactions__transaction-details p {
+        margin-bottom: .5rem; }
+
+.mt-lg {
+  margin-top: 5rem; }
+
+.mt-md {
+  margin-top: 3rem; }
+
+.mt-sm {
+  margin-top: 1rem; }
+
+.mb-lg {
+  margin-bottom: 5rem; }
+
+.mb-md {
+  margin-bottom: 3rem; }
+
+.mb-sm {
+  margin-bottom: 1rem; }
+
+.mr-sm {
+  margin-right: 1rem; }
+
+.header__1 {
+  font-size: 3.5rem;
+  font-weight: 300; }
+
+.header__2 {
+  font-size: 1.6rem; }
+
+.btn {
+  font-size: 2rem;
+  font-family: "Nunito", sans-serif;
+  padding: 1.5rem 2.5rem;
+  outline: 0 !important;
+  border: 0 !important;
+  cursor: pointer; }
+  .btn__primary {
+    background-color: #ffde32;
+    color: #333;
+    transition: all .2s; }
+    .btn__primary:hover {
+      background-color: #333;
+      color: #ffde32; }
+  .btn__close {
+    font-family: "Nunito", sans-serif;
+    font-size: 2rem;
+    color: #cc0000;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer; }
+
+.nav__link {
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #333;
+  transition: color .2s; }
+  .nav__link:hover {
+    color: #8f8f8f;
+    text-decoration: none; }
+
+.flash__message {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem; }
+  .flash__message > button {
+    transform: translateY(30%); }

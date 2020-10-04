@@ -1,0 +1,111 @@
+<%- include('partials/navbar'); %>
+
+<section class="new-transaction">
+
+    <%- include('partials/messages'); %>
+
+    <div class="new-transaction__container">
+
+        <h1 class="header__1 mb-sm">New Transaction for <strong><%= property.property_name; %></strong></h1>
+
+        <form action="/transactions/new-transaction" class="new-transaction__form" method="POST">
+
+            <label for="datepicker">Transaction Date</label>
+            <input type="text" name="datepicker" id="datepicker" placeholder="Click To Select Transaction Date"
+                autocomplete="off">
+
+            <label for="rent">Rent Received</label>
+            <input type="text" name="rent" id="rent" placeholder="0.00" onkeyup="assignRentTotal()">
+
+            <h2 class="header-2">Deductions</h2>
+
+            <label for="levy">Levy</label>
+            <input type="text" name="levy" id="levy" placeholder="0.00">
+
+            <label for=" levy_description">Levy Description</label>
+            <textarea name="levy_description" id="levy_description" rows="3"></textarea>
+
+            <label for="maintenance">Maintenance</label>
+            <input type="text" name="maintenance" id="maintenance" placeholder="0.00">
+
+            <label for="maintenance_description">Maintenance Description</label>
+            <textarea name="maintenance_description" id="maintenance_description" rows="3"></textarea>
+
+            <label for="rates">Rates</label>
+            <input type="text" name="rates" id="rates" placeholder="0.00">
+
+            <label for="agency">Agency Fee</label>
+            <input type="text" name="agency" id="agency" placeholder="0.00">
+
+            <div class="new-transaction__form-actions mt-md">
+                <div class="new-transaction__buttons">
+                    <button type="submit" class="btn btn__primary" name="submit" value="<%= property._id; %>">Add
+                        Transaction</button>
+                    <button class="btn btn__primary" id="balance">Calculate Total</button>
+                </div>
+                <p class="new-transaction__calc">0.00</p>
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="/js/vendor/pikaday.js"></script>
+<script>
+
+    var picker = new Pikaday({
+        field: document.getElementById('datepicker'),
+        format: 'YYYY-MM-DD',
+        toString(date, format) {
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+            if (day >= 1 && day <= 9) {
+                day = `0${day}`;
+            }
+
+            if (month >= 1 && month <= 9) {
+                month = `0${month}`;
+            }
+
+            return `${year}-${month}-${day}`;
+        }
+    });
+
+    // Balance Transactions
+    const balanceButton = document.getElementById('balance');
+
+    balanceButton.addEventListener('click', (ev) => {
+        ev.preventDefault();
+
+        // Balance Calculation
+        let levy = parseFloat(document.getElementById('levy').value);
+        let maintenance = parseFloat(document.getElementById('maintenance').value);
+        let rates = parseFloat(document.getElementById('rates').value);
+        let agency = parseFloat(document.getElementById('agency').value);
+
+        if (!levy) {
+            levy = 0;
+        }
+
+        if (!maintenance) {
+            maintenance = 0;
+        }
+
+        if (!rates) {
+            rates = 0;
+        }
+
+        if (!agency) {
+            agency = 0;
+        }
+
+        const rentAmountEntered = parseInt(document.getElementById('rent').value);
+        const calculatedValue = (rentAmountEntered - levy - maintenance - rates - agency).toFixed(2);
+        assignRentTotal(calculatedValue);
+    });
+
+</script>

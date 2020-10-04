@@ -1,0 +1,85 @@
+// Margin Utility Classes
+.mt-lg { margin-top: 5rem; }
+.mt-md { margin-top: 3rem; }
+.mt-sm { margin-top: 1rem; }
+
+.mb-lg { margin-bottom: 5rem; }
+.mb-md { margin-bottom: 3rem; }
+.mb-sm { margin-bottom: 1rem; }
+
+.mr-sm { margin-right: 1rem; }
+
+// Header Utility Classes
+.header {
+
+    &__1 {
+        font-size: 3.5rem;
+        font-weight: 300;
+    }
+
+    &__2 {
+        font-size: 1.6rem;
+    }
+
+}
+
+// Button Utility Classes
+.btn {
+    
+    font-size: 2rem;
+    font-family: $primaryFontStack;
+    padding: 1.5rem 2.5rem;
+    outline: 0 !important;
+    border: 0 !important;
+    cursor: pointer;
+
+    &__primary {
+        background-color: $primaryColour;
+        color: $darkColour;
+        transition: all .2s;
+
+        &:hover {
+            background-color: $darkColour;
+            color: $primaryColour;
+        }
+    }
+
+    &__close {
+        font-family: $primaryFontStack;
+        font-size: 2rem;
+        color: #cc0000;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+// Navigation Utility Classes
+.nav__link {
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: $darkColour;
+    transition: color .2s;
+
+    &:hover {
+        color: #8f8f8f;
+        text-decoration: none;
+    }
+}
+
+// Messages
+.flash__message {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+
+    & > button {
+        transform: translateY(30%);
+    }
+}

@@ -1,0 +1,55 @@
+<%- include('partials/navbar'); %>
+
+<section class="transactions">
+
+    <%- include('partials/messages'); %>
+
+    <div class="transactions__container">
+
+        <label for="search" class="transactions__label">Search Transactions for
+            <strong><%= property.property_name; %></strong></label>
+        <input type="text" name="search" id="search" class="transactions__input" onkeyup="">
+
+        <!-- New Transaction Button -->
+        <a href="/transactions/new-transaction/<%= property._id; %>" class="transactions__link">New Transaction</a>
+
+        <div class="transactions__list">
+
+            <% if (transactions.length > 0) { %>
+            <% transactions.forEach((trans) => { %>
+
+            <div class="transactions__transaction">
+                <p class="transactions__transaction-date">
+                    <%= trans.transaction_date.toString().substring(0, 15); %>
+                </p>
+                <div class="transactions__transaction-toggle">
+                    <p class="transactions__transaction-amount">R <%= trans.rent_received; %></p>
+                    <i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="transactions__transaction-details transactions__transaction-details-hide" id="">
+                <h2 class="header__2">Rent Received: R8500.00</h2>
+                <h2 class="header__2">Deductions</h2>
+                <p class="transactions__transaction-detail"><strong>Rates:</strong> R100.00</p>
+                <p class="transactions__transaction-detail"><strong>Levy:</strong> R100.00</p>
+                <p class="transactions__transaction-detail">This is the description of the levy deduction.</p>
+                <p class="transactions__transaction-detail"><strong>Maintenance:</strong> R100.00</p>
+                <p class="transactions__transaction-detail">This is a description of the maintenance deduction.</p>
+                <p class="transactions__transaction-detail"><strong>Agency Fee:</strong> R100.00</p>
+                <hr>
+                <p class="transactions__transaction-detail"><strong>Paid To Owner: R6987.55</strong></p>
+
+                <div class="transactions__transaction-actions mt-sm">
+                    <a href="/edit-transaction/<%= property._id; %>" class="transactions__link mr-sm">Edit</a>
+                    <a href="/transaction-statement/<%= property._id; %>" class="transactions__link">Statement</a>
+                </div>
+            </div>
+
+            <% }); %>
+            <% } %>
+
+        </div>
+
+    </div>
+
+</section>

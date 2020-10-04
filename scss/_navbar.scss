@@ -1,0 +1,47 @@
+.navbar {
+    height: 10rem;
+    padding: 0 1rem;
+    max-width: 120rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__brand {
+        font-size: 3rem;
+    }
+
+    &__links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__link {
+        font-size: 1.5rem;
+        font-family: $primaryFontStack;
+        color: $darkColour;
+        transition: all .2s;
+
+        &:hover {
+            color: #8f8f8f;
+            text-decoration: none;
+        }
+    }
+
+    &__link-primary {
+        font-size: 1.5rem;
+        font-family: $primaryFontStack;
+        color: $darkColour;
+        background-color: $primaryColour;
+        padding: .7rem 1.2rem;
+        transition: all .2s;
+
+        &:hover {
+            color: $primaryColour;
+            background-color: $darkColour;
+            text-decoration: none;
+        }
+    }
+}

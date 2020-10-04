@@ -1,0 +1,35 @@
+<%- include('partials/navbar'); %>
+
+<section class="register">
+
+    <div class="register__container">
+
+        <h1 class="header__1 mb-sm">Add User</h1>
+
+        <%- include('partials/messages'); %>
+
+        <form action="/add-user" method="POST" class="register__form">
+
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="register__form-field"
+                value="<%= typeof name != 'undefined' ? name : '' %>">
+
+            <label for="email" class="mt-md">Email</label>
+            <input type="email" name="email" id="email" class="register__form-field"
+                value="<%= typeof email != 'undefined' ? email : '' %>">
+
+            <label for="password" class="mt-md">Password</label>
+            <input type="password" name="password" id="password" class="register__form-field"
+                value="<%= typeof password != 'undefined' ? password : '' %>">
+
+            <label for="confpass" class="mt-md">Confirm Password</label>
+            <input type="password" name="confpass" id="confpass" class="register__form-field"
+                value="<%= typeof confpass != 'undefined' ? confpass : '' %>">
+
+            <button type="submit" class="btn btn__primary mt-md">Add User</button>
+
+        </form>
+
+    </div>
+
+</section>

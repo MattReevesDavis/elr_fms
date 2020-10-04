@@ -1,0 +1,37 @@
+<%- include('partials/navbar'); %>
+
+<section class="dashboard">
+
+    <%- include('partials/messages'); %>
+
+    <div class="dashboard__container">
+
+        <label for="search" class="dashboard__label">Search Properties</label>
+        <input type="text" name="search" id="search" class="dashboard__input" onkeyup="propertySearch()">
+
+        <div class="dashboard__properties">
+
+            <% properties.forEach((prop) => { %>
+            <div class="dashboard__property" id="property_<%= prop._id; %>">
+                <p class="dashboard__property-name" id="name_<%= prop._id; %>"><%= prop.property_name; %></p>
+                <div class="dashboard__property-actions" id="action_<%= prop._id; %>">
+                    <i class="fa fa-chevron-down fa-2x" id="" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="dashboard__property-details dashboard__property-details-hide" id="detail_<%= prop._id; %>">
+                <h2 class="header__2">Owner Details</h2>
+                <p class="owner__name"><%= prop.owner_name; %></p>
+                <p class="owner__email"><%= prop.owner_email; %></p>
+                <p class="owner__number"><%= prop.owner_number; %></p>
+                <!-- <form action="/transactions" method="POST">
+                    <button type="submit" class="btn btn__primary" value="<%= prop._id; %>">Transactions</button>
+                </form> -->
+                <a href="/transactions/<%= prop._id; %>" class="dashboard__transactions-link">Transactions</a>
+            </div>
+            <% }); %>
+
+        </div>
+
+    </div>
+
+</section>

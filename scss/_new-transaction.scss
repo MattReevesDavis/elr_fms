@@ -1,0 +1,88 @@
+.new-transaction {
+
+    height: calc(100vh - 10rem);
+
+    & .flash__message {
+        margin: 0 auto;
+        width: 30rem;
+    }
+
+    &__container {
+        max-width: 120rem;
+        margin: 0 auto;
+        margin-top: 3rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        & h2 {
+            margin: 0;
+            margin-top: 1rem;
+            font-size: 2.5rem;
+        }
+
+        & label {
+            font-size: 1.6rem;
+            margin: 0;
+            margin-top: 1rem;
+        }
+
+        & input {
+            font-family: inherit;
+            border: none;
+            border: 1px solid lighten($darkColour, 70%);
+            outline: none;
+            padding: .5rem;
+            background-color: transparent;
+            color: $darkColour;
+            font-size: 1.4rem;
+            transition: .2s;
+
+            &:focus {
+                border: 1px solid $primaryColour;
+            }
+
+            &::placeholder {
+                font-size: 1.4rem;
+            }
+        }
+
+        & textarea {
+            font-family: inherit;
+            border: none;
+            border: 1px solid lighten($darkColour, 70%);
+            outline: none;
+            padding: .5rem;
+            background-color: transparent;
+            color: $darkColour;
+            font-size: 1.4rem;
+            resize: none;
+            transition: .2s;
+
+            &:focus {
+                border: 1px solid $primaryColour;
+            }
+        }
+
+        &-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        & button {
+            margin-right: 1rem;
+        }
+    }
+
+    &__calc {
+        font-size: 2.5rem;
+    }
+
+}

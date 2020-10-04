@@ -1,0 +1,38 @@
+// Colour Palette
+$primaryColour: #ffde32;
+$darkColour: #333;
+$lightColour: #f4f4f4;
+
+// Fonts
+$primaryFontStack: 'Nunito', sans-serif;
+$secondaryFontStack: 'Lora', serif;
+
+// Media Query Breakpoints
+$bpLargest: 75em;           // 1200px
+$bpLarge: 62.5em;           // 1000px
+$bpMedium: 48em;            // 768px
+$bpSmall: 37.5em;           // 600px
+$bpSmallest: 28.125em;      // 450px
+
+// Global Reset
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    @media only screen and (max-width: $bpLarge) {
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: $primaryFontStack;
+    font-weight: 300;
+    line-height: 1.6;
+}

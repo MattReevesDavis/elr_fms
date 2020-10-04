@@ -1,0 +1,34 @@
+<section class="login">
+
+    <div class="login__container">
+
+        <div class="login__hero">
+            <img src="../img/logo-dark.png" alt="LogoDark" class="login__logo">
+        </div>
+
+        <div class="login__form-container">
+
+            <img src="../img/logo-mixed.png" alt="LogoMixed" class="login__form-logo">
+
+            <div class="login__form-wrapper">
+                <h1 class="header__1 mb-md">Sign In</h1>
+
+                <%- include('partials/messages'); %>
+
+                <form action="/login" method="POST" class="login__form">
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="login__form-field">
+
+                    <label for="password" class="mt-md">Password</label>
+                    <input type="password" name="password" id="password" class="login__form-field">
+
+                    <button type="submit" class="btn btn__primary mt-md">Sign In</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>

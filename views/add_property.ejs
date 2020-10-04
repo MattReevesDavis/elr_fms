@@ -1,0 +1,35 @@
+<%- include('partials/navbar'); %>
+
+<section class="property">
+
+    <div class="property__container">
+
+        <h1 class="header__1 mb-sm">Add Property</h1>
+
+        <%- include('partials/messages'); %>
+
+        <form action="/add-property" method="POST" class="property__form">
+
+            <label for="property">Property Description</label>
+            <input type="text" name="property" id="property" class="property__form-field"
+                value="<%= typeof property != 'undefined' ? property : '' %>">
+
+            <label for="owner" class="mt-md">Owner Name</label>
+            <input type="text" name="owner" id="owner" class="property__form-field"
+                value="<%= typeof owner != 'undefined' ? owner : '' %>">
+
+            <label for="email" class="mt-md">Owner Email</label>
+            <input type="email" name="email" id="email" class="property__form-field"
+                value="<%= typeof email != 'undefined' ? email : '' %>">
+
+            <label for="number" class="mt-md">Owner Number</label>
+            <input type="text" name="number" id="number" class="property__form-field"
+                value="<%= typeof number != 'undefined' ? number : '' %>">
+
+            <button type="submit" class="btn btn__primary mt-md">Add Property</button>
+
+        </form>
+
+    </div>
+
+</section>
